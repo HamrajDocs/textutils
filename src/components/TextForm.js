@@ -53,18 +53,18 @@ export default function TextForm(props) {
         {/* we write {text} in value of text area which will give the default value in the textarea enter text here */}
       </div>
       {/* now we want to change text onclick so we create function handleUpClick  */}
-      <button className="btn btn-primary mx-2" onClick={handleUpClick} >
+      <button className="btn btn-primary mx-2 my-1" onClick={handleUpClick} >
         Convert to uppercase
       </button>
-      <button className="btn btn-primary mx-2" onClick={handleLoClick} >
+      <button className="btn btn-primary mx-2 my-1" onClick={handleLoClick} >
         Convert to Lowercase
       </button>
-      <button className="btn btn-primary mx-2" onClick={clear}>clear</button>
+      <button className="btn btn-primary mx-2 my-1" onClick={clear}>clear</button>
     </div>
     <div className="container" style={{backgroundColor: props.mode==='dark'?'grey':'white', color: props.mode==='dark'?'white':'black'}}>
         <h1>Your Text summary</h1>
-        <p>{text.split(" ").length} words and {text.length} characters</p>
-        <p>{0.0008 * text.split(" ").length} Minutes to read</p>
+        <p>{text.split(" ").filter((element)=>{return element.length !==0}).length} words and {text.length} characters</p>
+        <p>{0.0008 * text.split(" ").filter((element)=>{return element.length !==0}).length} Minutes to read</p>
         <h2>Preview</h2>
         <p>{text}</p>
 

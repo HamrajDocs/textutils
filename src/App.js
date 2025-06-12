@@ -55,12 +55,13 @@ function App() {
       
     {/* always use the exact path as react do partial matching for eg if path is /user/about is component 1 and there is /user component 2 then if we dont use exact path it will give use component 2 always.*/}
       <Routes>
-        <Route exact path="/about" element={<About />} />
+        <Route exact path="/about" element={<About mode= {mode} />} />
         
-        <Route exact path="/" element={ <TextForm showAlert={showAlert} heading="Enter the text to analyze" mode= {mode} />} />
+        <Route exact path="/" element={ 
+    <TextForm showAlert={showAlert} heading="Enter the text to analyze" mode= {mode} />} />
       </Routes>
+  
 
-    
     </div>
     </Router>
     
